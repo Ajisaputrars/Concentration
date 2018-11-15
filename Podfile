@@ -7,7 +7,7 @@ target 'Concentration' do
 
   # Pods for Concentration
 
-  pod 'Alamofire', '~> 4.7'
+  # pod 'Alamofire', '~> 4.7'
 
   target 'ConcentrationTests' do
     inherit! :search_paths
