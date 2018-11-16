@@ -53,6 +53,12 @@
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outletCollection property="cardButtons" destination="W4Z-0g-TJt" collectionClass="NSMutableArray" id="82R-f4-EQu"/>
+                        <outletCollection property="cardButtons" destination="Hq3-4f-RkE" collectionClass="NSMutableArray" id="tUC-9i-KUx"/>
+                        <outletCollection property="cardButtons" destination="XKm-t2-ypL" collectionClass="NSMutableArray" id="eaT-eY-X7O"/>
+                        <outletCollection property="cardButtons" destination="iL9-Jw-DBj" collectionClass="NSMutableArray" id="3r7-wq-DAz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
