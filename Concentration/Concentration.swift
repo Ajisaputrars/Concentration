@@ -24,8 +24,8 @@ class Concentration{
             let card = Card()
             self.cards += [card, card]
         }
-        
-        //TODO: Shuffle the card
-        
+        for i in cards {
+            print("Card = \(i)")
+        }
     }
 }

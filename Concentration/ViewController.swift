@@ -19,6 +19,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("cardbuttoncount+1 = \((cardButtons.count + 1) / 2)")
     }
     
     @IBAction func touchCard(_ sender: UIButton) {
@@ -33,6 +34,7 @@ class ViewController: UIViewController {
     
     func updateViewFromModel(){
         for index in cardButtons.indices {
+//            print("Indexnya adalah " + String(index))
             let button = cardButtons[index]
             let card = game.cards[index]
             if card.isFaceUp {
@@ -43,6 +45,7 @@ class ViewController: UIViewController {
                 button.backgroundColor = card.isMatch ? UIColor.clear : UIColor.orange
             }
         }
+        print(emoji)
     }
     
     func emoji(for card: Card) -> String{
