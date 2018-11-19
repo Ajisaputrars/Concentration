@@ -19,13 +19,11 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        game = Concentration(numberOfPairsOfCards: cardButtons.count / 2)
     }
     
     @IBAction func touchCard(_ sender: UIButton) {
         flipCount += 1
         if let cardNumber = cardButtons.index(of: sender) {
-//            flipCard(withEmoji: emojis[cardNumber], on: sender)
             game.chooseCard(at: cardNumber)
             updateViewFromModel()
         } else {
