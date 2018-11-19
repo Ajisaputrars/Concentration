@@ -10,12 +10,14 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    var game: Concentration!
     var flipCount = 0
     var emojis = ["👻", "🎃", "👻", "🎃"]
     @IBOutlet var cardButtons: [UIButton]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        game = Concentration()
     }
     
     @IBAction func touchCard(_ sender: UIButton) {
