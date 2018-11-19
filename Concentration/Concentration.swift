@@ -9,7 +9,11 @@
 import Foundation
 
 class Concentration{
-    var cards: Array<Card>!
+    var cards = [Card]()
+    
+    init(numberOfPairsOfCards: Int){
+        
+    }
     
     func chooseCard(at index: Int){
         
