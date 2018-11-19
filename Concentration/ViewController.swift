@@ -10,19 +10,28 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    lazy var game = Concentration(numberOfPairsOfCards: (cardButtons.count + 1) / 2)
-    var flipCount = 0
+    var game:Concentration!
     var emojis = ["👻", "🎃", "🦇" , "🌜", "🌞", "🌟", "🌪", "🦉"]
     var emoji = [Int:String]()
     
     @IBOutlet var cardButtons: [UIButton]!
+    @IBOutlet weak var flipCountLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        game = Concentration(numberOfPairsOfCards: (cardButtons.count + 1) / 2)
+    }
+    
+    @IBAction func newGameButton(_ sender: UIButton) {
+        game = nil
+        emojis = ["👻", "🎃", "🦇" , "🌜", "🌞", "🌟", "🌪", "🦉"]
+        emoji.removeAll()
+        
+        game = Concentration(numberOfPairsOfCards: (cardButtons.count + 1) / 2)
+        updateViewFromModel()
     }
     
     @IBAction func touchCard(_ sender: UIButton) {
-        flipCount += 1
         if let cardNumber = cardButtons.index(of: sender) {
             game.chooseCard(at: cardNumber)
             updateViewFromModel()
@@ -33,7 +42,6 @@ class ViewController: UIViewController {
     
     func updateViewFromModel(){
         for index in cardButtons.indices {
-//            print("Indexnya adalah " + String(index))
             let button = cardButtons[index]
             let card = game.cards[index]
             if card.isFaceUp {
@@ -44,6 +52,7 @@ class ViewController: UIViewController {
                 button.backgroundColor = card.isMatch ? UIColor.clear : UIColor.orange
             }
         }
+        flipCountLabel.text = String(game.flipCount)
     }
     
     func emoji(for card: Card) -> String{
