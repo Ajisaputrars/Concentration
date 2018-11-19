@@ -14,12 +14,6 @@ class Concentration{
     var indexOfOneAndOnlyFaceUpCard: Int?
     
     func chooseCard(at index: Int){
-//        if cards[index].isFaceUp {
-//            cards[index].isFaceUp = false
-//        } else {
-//            cards[index].isFaceUp = true
-//        }
-        
         if !cards[index].isMatch {
             if let matchIndex = indexOfOneAndOnlyFaceUpCard, matchIndex != index {
                 if cards[matchIndex].identifier == cards[index].identifier {
@@ -43,5 +37,8 @@ class Concentration{
             let card = Card()
             self.cards += [card, card]
         }
+        let shuffledCards = cards.shuffled()
+        cards.removeAll()
+        cards = shuffledCards
     }
 }
