@@ -21,5 +21,4 @@ extension Array {
         }
         return results
     }
-    
 }
