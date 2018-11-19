@@ -19,7 +19,6 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("cardbuttoncount+1 = \((cardButtons.count + 1) / 2)")
     }
     
     @IBAction func touchCard(_ sender: UIButton) {
@@ -45,7 +44,6 @@ class ViewController: UIViewController {
                 button.backgroundColor = card.isMatch ? UIColor.clear : UIColor.orange
             }
         }
-        print(emoji)
     }
     
     func emoji(for card: Card) -> String{

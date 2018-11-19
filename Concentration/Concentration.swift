@@ -24,8 +24,5 @@ class Concentration{
             let card = Card()
             self.cards += [card, card]
         }
-        for i in cards {
-            print("Card = \(i)")
-        }
     }
 }
