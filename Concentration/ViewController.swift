@@ -13,7 +13,8 @@ class ViewController: UIViewController {
     lazy var game = Concentration(numberOfPairsOfCards: (cardButtons.count + 1) / 2)
     var flipCount = 0
     var emojis = ["👻", "🎃", "🦇" , "🌜", "🌞", "🌟", "🌪", "🦉"]
-//    var emojis = ["👻", "🎃", "🦇" , "🌜"]
+    var emoji = [Int:String]()
+    
     @IBOutlet var cardButtons: [UIButton]!
     
     override func viewDidLoad() {
@@ -47,16 +48,12 @@ class ViewController: UIViewController {
     }
     
     func emoji(for card: Card) -> String{
-        return "?"
+        if emoji[card.identifier] == nil, emojis.count > 0 {
+            let randomIndex = Int(arc4random_uniform(UInt32(emojis.count)))
+            emoji[card.identifier] = emojis.remove(at: randomIndex)
+        }
+        return emoji[card.identifier] ?? "?"
     }
-    
-//    func flipCard(withEmoji emoji: String, on button: UIButton){
-//        if button.currentTitle == emoji {
-//
-//        } else {
-//
-//        }
-//    }
 }
 
 extension ViewController{
