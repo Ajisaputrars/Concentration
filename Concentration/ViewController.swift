@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        game = Concentration()
+        //game = Concentration()
     }
     
     @IBAction func touchCard(_ sender: UIButton) {
