@@ -156,6 +156,7 @@
                     </view>
                     <connections>
                         <outlet property="flipCountLabel" destination="e2w-zd-hje" id="qRk-qH-ytn"/>
+                        <outlet property="winLabel" destination="eAA-9V-o6x" id="cBs-CL-jrk"/>
                         <outletCollection property="cardButtons" destination="W4Z-0g-TJt" collectionClass="NSMutableArray" id="82R-f4-EQu"/>
                         <outletCollection property="cardButtons" destination="Hq3-4f-RkE" collectionClass="NSMutableArray" id="tUC-9i-KUx"/>
                         <outletCollection property="cardButtons" destination="XKm-t2-ypL" collectionClass="NSMutableArray" id="eaT-eY-X7O"/>

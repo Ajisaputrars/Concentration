@@ -16,21 +16,13 @@ class ViewController: UIViewController {
     
     @IBOutlet var cardButtons: [UIButton]!
     @IBOutlet weak var flipCountLabel: UILabel!
+    @IBOutlet weak var winLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        winLabel.text = ""
         game = Concentration(numberOfPairsOfCards: (cardButtons.count + 1) / 2)
-    }
-    
-    @IBAction func updateUIButtonPressed(_ sender: UIButton) {
-        var countMatch = 0
-        for i in game.cards {
-            if i.isMatch {
-                countMatch += 1
-            }
-        }
-        print(countMatch)
-        updateViewFromModel()
     }
     
     @IBAction func newGameButton(_ sender: UIButton) {
@@ -48,6 +40,9 @@ class ViewController: UIViewController {
             updateViewFromModel()
         } else {
             print("Error: Not registered Emoji")
+        }
+        if game.countMatch == 12 {
+            winLabel.text = "Win!"
         }
     }
     
