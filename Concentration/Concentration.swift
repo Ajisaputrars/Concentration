@@ -9,6 +9,8 @@
 import Foundation
 
 class Concentration{
+    var countMatch = 0
+    
     var cards = [Card]()
     
     private var _flipCount = 0
@@ -38,6 +40,19 @@ class Concentration{
                 cards[index].isFaceUp = true
                 indexOfOneAndOnlyFaceUpCard = index
                 
+            }
+        }
+        
+        countMatch = 0
+        for i in cards {
+            if i.isMatch {
+                countMatch += 1
+            }
+        }
+        
+        if countMatch >= 12 {
+            for flipDownIndex in cards.indices {
+                cards[flipDownIndex].isFaceUp = false
             }
         }
     }
