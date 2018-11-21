@@ -9,14 +9,13 @@
 import UIKit
 
 class ViewController: UIViewController {
+    @IBOutlet var cardButtons: [UIButton]!
+    @IBOutlet weak var flipCountLabel: UILabel!
+    @IBOutlet weak var winLabel: UILabel!
     
     var game:Concentration!
     var emojis = ["👻", "🎃", "🦇" , "🌜", "🌞", "🌟", "🌪", "🦉"]
     var emoji = [Int:String]()
-    
-    @IBOutlet var cardButtons: [UIButton]!
-    @IBOutlet weak var flipCountLabel: UILabel!
-    @IBOutlet weak var winLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()

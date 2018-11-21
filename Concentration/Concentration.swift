@@ -10,9 +10,7 @@ import Foundation
 
 class Concentration{
     var countMatch = 0
-    
     var cards = [Card]()
-    
     private var _flipCount = 0
     var flipCount:Int{
         return _flipCount
