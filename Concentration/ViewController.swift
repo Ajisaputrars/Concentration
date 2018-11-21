@@ -22,6 +22,17 @@ class ViewController: UIViewController {
         game = Concentration(numberOfPairsOfCards: (cardButtons.count + 1) / 2)
     }
     
+    @IBAction func updateUIButtonPressed(_ sender: UIButton) {
+        var countMatch = 0
+        for i in game.cards {
+            if i.isMatch {
+                countMatch += 1
+            }
+        }
+        print(countMatch)
+        updateViewFromModel()
+    }
+    
     @IBAction func newGameButton(_ sender: UIButton) {
         game = nil
         emojis = ["👻", "🎃", "🦇" , "🌜", "🌞", "🌟", "🌪", "🦉"]
