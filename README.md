@@ -1,5 +1,5 @@
 # Concentration
-This app is under construction
+This app is under construction, please wait!
 ---- 
 
 Copyright © 2018 **[Aji Saputra Raka Siwi][1]**
