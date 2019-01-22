@@ -1,5 +1,5 @@
 # Concentration
-This app is under construction, please wait :D
+This app is under construction, please wait
 ---- 
 
 
